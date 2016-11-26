@@ -1,0 +1,61 @@
+
+/*----- COMMON---*/
+.titulo{
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #002bff;
+    margin: 10px 0px 0px 0px;
+}
+
+
+
+.tabla {
+    font-size: 12px;
+    margin: 15px 10px 25px 0px;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.tabla th {
+    background: #5073e7;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.tabla td {
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+}
+
+.tabla tr:hover td {
+    background: #d0dafd;
+    color: #339;
+}
+
+.alerta{
+    background: #d6d6d6;
+    display: inline-block;
+    margin: 10px 0px;
+    border-left: solid gray;
+}
+.alerta h4{
+    color: #676767;
+    padding: 5px 15px;
+    font-weight: 100;
+}
+
+/*****************/
+
+.container{
+    padding: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+}
+

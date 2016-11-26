@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Fredy App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container" ng-controller="vistaCtrl as VCtrl">
+
+        <h4 class="titulo">Procesar de Ubigeo en Texto Plano</h4>
+        <p>
+            <strong>Creador:</strong><span>Fredy Vargas Romero</span>
+        </p>
+
+        <section id="load_file">
+            <input type="file" on-read-file="VCtrl.loadFile(contents)">
+        </section>
+
+        <div ng-show="VCtrl.ubigeos == undefined" class="alerta">
+            <h4>Seleccione un archivo, por favor.</h4>
+        </div>
+
+        <section id="container_texto"  ng-show="VCtrl.ubigeos!=undefined">
+            <p class="titulo">Texto</p>
+            <textarea cols="40" rows="10">
+                {{VCtrl.texto}}
+            </textarea>
+        </section>
+
+
+        <section id="container_tablas" ng-show="VCtrl.ubigeos!=undefined">
+            <p class="titulo">Resultados</p>
+            <table ng-repeat="(rango, sitio) in VCtrl.ubigeos" class="tabla">
+                <thead>
+                    <tr>
+                        <th colspan="4">{{rango|uppercase}}</th>
+                    </tr>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Código Padre</th>
+                        <th>Nombre Padre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in sitio">
+                        <td>{{item.codigo}}</td>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.codigo_padre}}</td>
+                        <td>{{item.nombre_padre}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+<!-- LIBRARIES-->
+<script src="lib/angular.min.js"></script>
+<!-- MY SCRIPTS-->
+<script src="js/my_script.js"></script>
+<script src="js/directives/onReadFile.js"></script>
+<script src="js/factories/ProcesadorTexto.js"></script>
+
+</body>
+</html>
